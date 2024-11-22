@@ -111,27 +111,64 @@
             class="inline-block px-6 py-3 bg-pink-600 text-white rounded-full shadow-lg hover:bg-pink-700 transition fade-in"
             style="animation-delay: 1.5s;">Lanjutkan Cerita Kami</a>
     </section>
-
-    <!-- Galeri Foto -->
     <section id="more" class="py-20 bg-gradient-to-r from-pink-400 via-purple-300 to-blue-500">
-        <h2 class="text-3xl font-bold mb-6 text-center text-white fade-in" style="animation-delay: 2s;">
-            Galeri Kami
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-6">
-    <img src="{{ asset('images/ralifa158.jpg') }}" alt="Foto Kami" class="rounded-xl shadow-lg object-cover h-48 w-full" />
-    <img src="{{ asset('images/ralifa146.jpg') }}" alt="Galeri 2" class="rounded-xl shadow-lg object-cover h-48 w-full" />
-    <img src="{{ asset('images/ralifa145.jpg') }}" alt="Galeri 3" class="rounded-xl shadow-lg object-cover h-48 w-full" />
-    <img src="{{ asset('images/ralifa143.jpg') }}" alt="Galeri 4" class="rounded-xl shadow-lg object-cover h-48 w-full" />
-    <img src="{{ asset('images/ralifa139.jpg') }}" alt="Galeri 5" class="rounded-xl shadow-lg object-cover h-48 w-full" />
-    <img src="{{ asset('images/ralifa110.jpg') }}" alt="Galeri 6" class="rounded-xl shadow-lg object-cover h-48 w-full" />
-    <img src="{{ asset('images/ralifa8.jpg') }}" alt="Galeri 4" class="rounded-xl shadow-lg object-cover h-48 w-full" />
-    <img src="{{ asset('images/ralifa9.jpg') }}" alt="Galeri 5" class="rounded-xl shadow-lg object-cover h-48 w-full" />
-    <img src="{{ asset('images/ralifa40.jpg') }}" alt="Galeri 6" class="rounded-xl shadow-lg object-cover h-48 w-full" />
-    <!-- Tambahkan lebih banyak gambar di sini -->
-</div>
+    <h2 class="text-3xl font-bold mb-6 text-center text-white fade-in" style="animation-delay: 2s;">
+        Galeri Kami
+    </h2>
+    <div class="relative overflow-hidden">
+        <!-- Tombol Navigasi -->
+        <button id="prevBtn"
+            class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-pink-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-700 z-10">
+            &#8249;
+        </button>
+        <button id="nextBtn"
+            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-pink-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-700 z-10">
+            &#8250;
+        </button>
 
+        <!-- Carousel Container -->
+        <div id="carousel" class="flex space-x-4 transition-transform duration-500">
+            <img src="{{ asset('images/ralifa158.jpg') }}" alt="Foto 1"
+                class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+            <img src="{{ asset('images/ralifa146.jpg') }}" alt="Foto 2"
+                class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+            <img src="{{ asset('images/ralifa145.jpg') }}" alt="Foto 3"
+                class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+            <img src="{{ asset('images/ralifa143.jpg') }}" alt="Foto 4"
+                class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+            <img src="{{ asset('images/ralifa139.jpg') }}" alt="Foto 5"
+                class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+            <img src="{{ asset('images/ralifa110.jpg') }}" alt="Foto 6"
+                class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    const carousel = document.getElementById("carousel");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let scrollAmount = 0; // Jumlah scroll saat ini
+    const scrollStep = 300; // Jumlah scroll per klik (px)
+
+    // Tombol Prev
+    prevBtn.addEventListener("click", () => {
+        scrollAmount -= scrollStep;
+        if (scrollAmount < 0) scrollAmount = 0; // Cegah scroll negatif
+        carousel.style.transform = `translateX(-${scrollAmount}px)`;
+    });
+
+    // Tombol Next
+    nextBtn.addEventListener("click", () => {
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth; // Hitung maksimal scroll
+        scrollAmount += scrollStep;
+        if (scrollAmount > maxScroll) scrollAmount = maxScroll; // Cegah scroll melewati batas
+        carousel.style.transform = `translateX(-${scrollAmount}px)`;
+    });
+</script>
+
+
 
     <!-- Footer -->
     <footer class="py-10 bg-black text-white text-center">
