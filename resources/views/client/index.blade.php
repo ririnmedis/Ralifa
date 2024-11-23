@@ -159,10 +159,26 @@
                     class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
                 <img src="{{ asset('images/ralifa110.jpg') }}" alt="Foto 6"
                     class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+                <img src="{{ asset('images/ralifa148.jpg') }}" alt="Foto 5"
+                    class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+                <img src="{{ asset('images/ralifa149.jpg') }}" alt="Foto 6"
+                    class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+                <img src="{{ asset('images/ralifa150.jpg') }}" alt="Foto 5"
+                    class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+                <img src="{{ asset('images/ralifa151.jpg') }}" alt="Foto 6"
+                    class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+                <img src="{{ asset('images/ralifa152.jpg') }}" alt="Foto 5"
+                    class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+                <img src="{{ asset('images/ralifa153.jpg') }}" alt="Foto 6"
+                    class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+                <img src="{{ asset('images/ralifa154.jpg') }}" alt="Foto 5"
+                    class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
+                <img src="{{ asset('images/ralifa157.jpg') }}" alt="Foto 6"
+                    class="rounded-xl shadow-lg object-cover h-48 w-64 flex-shrink-0 fade-in" />
             </div>
         </div>
     </section>
-    <section id="videoSection" class="py-20 bg-gray-100 text-center">
+    <section id="videoSection" class="py-20 bg-pink-100 text-center">
     <h2 class="text-3xl font-bold mb-6 text-pink-600">
         Koleksi Video Kami
     </h2>
@@ -185,9 +201,17 @@
                 Browser Anda tidak mendukung elemen video.
             </video>
         </div>
+        <div class="video-item">
+            <video controls class="rounded-xl shadow-lg w-full h-48 object-cover">
+                <source src="{{ asset('videos/ralifa13.mp4') }}" type="video/mp4">
+                Browser Anda tidak mendukung elemen video.
+            </video>
+        </div>
         <!-- Tambahkan lebih banyak video di sini -->
     </div>
 </section>
+
+
 
 
     <script>
